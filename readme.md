@@ -1,5 +1,7 @@
 # 开发Laravel扩展教程
 
+[![Build Status](https://travis-ci.org/jiezeal/hasher.svg?branch=master)](https://travis-ci.org/jiezeal/hasher)
+
 ### 用法
 ```
 composer require jiezeal/hasher
