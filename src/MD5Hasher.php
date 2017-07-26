@@ -23,11 +23,11 @@ class MD5Hasher
     /**
      * @param $value
      * @param $hashValue
-     * @param array $option
+     * @param array $options
      * @return bool
      * @author zhulinjie
      */
-    public function check($value, $hashValue, array $option = [])
+    public function check($value, $hashValue, array $options = [])
     {
         $salt = isset($options['salt']) ? $options['salt'] : '';
         return hash('md5', $value . $salt) === $hashValue;
