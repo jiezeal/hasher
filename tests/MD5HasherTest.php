@@ -11,13 +11,22 @@ use Jiezeal\Hasher\MD5Hasher;
  */
 class MD5HasherTest extends TestCase
 {
+    /**
+     * @var
+     */
     protected $hasher;
 
+    /**
+     * @author zhulinjie
+     */
     public function setUp()
     {
         $this->hasher = new MD5Hasher();
     }
 
+    /**
+     * @author zhulinjie
+     */
     public function testMD5HasherMake()
     {
         $password = md5('password');
@@ -26,6 +35,9 @@ class MD5HasherTest extends TestCase
         $this->assertEquals($password, $passwordTwo);
     }
 
+    /**
+     * @author zhulinjie
+     */
     public function testMD5HasherMakeWithSalt()
     {
         $password = md5('passwordjiezeal');
@@ -34,6 +46,9 @@ class MD5HasherTest extends TestCase
         $this->assertEquals($password, $passwordTwo);
     }
 
+    /**
+     * @author zhulinjie
+     */
     public function testMD5HasherCheck()
     {
         $password = md5('password');
@@ -42,6 +57,9 @@ class MD5HasherTest extends TestCase
         $this->assertTrue($passwordCheck);
     }
 
+    /**
+     * @author zhulinjie
+     */
     public function testMD5HasherCheckWithSalt()
     {
         $password = md5('passwordjiezeal');
