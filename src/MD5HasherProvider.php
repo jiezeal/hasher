@@ -24,7 +24,7 @@ class MD5HasherProvider extends ServiceProvider
             __DIR__.'/assets' => public_path('vendor/courier'),
         ], 'public');
     }
-
+    
     /**
      * Register the application services.
      *
