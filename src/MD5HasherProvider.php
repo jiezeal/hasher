@@ -13,7 +13,16 @@ class MD5HasherProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->loadViewsFrom(__DIR__.'/views', 'courier');
+        $this->publishes([
+            __DIR__.'/views' => base_path('resources/views/vendor/courier'),
+        ]);
+        $this->publishes([
+            __DIR__.'/config/courier.php' => config_path('courier.php'),
+        ]);
+        $this->publishes([
+            __DIR__.'/assets' => public_path('vendor/courier'),
+        ], 'public');
     }
 
     /**
@@ -23,8 +32,6 @@ class MD5HasherProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('md5hash', function (){
-            return new MD5Hasher();
-        });
+        $this->app->singleton('md5hash', MD5Hasher::class);
     }
 }
